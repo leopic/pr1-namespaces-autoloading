@@ -7,6 +7,17 @@
 
 require "app/bootstrap.php";
 
-$controladorCalcuadora = new App\Controladores\CalculadoraControlador();
-$resultado = $controladorCalcuadora->sumar(5, 10);
-print($resultado);
+use App\Controladores\CalculadoraControlador;
+
+// Creamos una nueva aplicación
+$app = new \Slim\App;
+
+// Definimos una primera ruta
+$app->get('/calculadora/sumar/{primerValor}/{segundoValor}', function ($request, $response, $args) {
+    $controlador = new CalculadoraControlador();
+    $resultado = $controlador->sumar($args['primerValor'], $args['segundoValor']);
+    return $response->write($resultado);
+});
+
+// Corremos la aplicación
+$app->run();
