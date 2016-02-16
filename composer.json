@@ -1,0 +1,14 @@
+{
+    "name": "cenfotec/pr1",
+    "description": "Proyecto de pruebas usando composer para dependencias",
+    "require": {
+        "slim/slim": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leo Picado",
+            "email": "leopic@gmail.com"
+        }
+    ]
+}
